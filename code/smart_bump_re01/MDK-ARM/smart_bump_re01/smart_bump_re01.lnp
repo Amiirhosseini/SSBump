@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"smart_bump_re01\startup_stm32f103xb.o"
+"smart_bump_re01\main.o"
+"smart_bump_re01\stm32f1xx_it.o"
+"smart_bump_re01\stm32f1xx_hal_msp.o"
+"smart_bump_re01\stm32f1xx_hal_gpio_ex.o"
+"smart_bump_re01\stm32f1xx_hal_tim.o"
+"smart_bump_re01\stm32f1xx_hal_tim_ex.o"
+"smart_bump_re01\stm32f1xx_hal.o"
+"smart_bump_re01\stm32f1xx_hal_rcc.o"
+"smart_bump_re01\stm32f1xx_hal_rcc_ex.o"
+"smart_bump_re01\stm32f1xx_hal_gpio.o"
+"smart_bump_re01\stm32f1xx_hal_dma.o"
+"smart_bump_re01\stm32f1xx_hal_cortex.o"
+"smart_bump_re01\stm32f1xx_hal_pwr.o"
+"smart_bump_re01\stm32f1xx_hal_flash.o"
+"smart_bump_re01\stm32f1xx_hal_flash_ex.o"
+"smart_bump_re01\stm32f1xx_hal_exti.o"
+"smart_bump_re01\system_stm32f1xx.o"
+--strict --scatter "smart_bump_re01\smart_bump_re01.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "smart_bump_re01.map" -o smart_bump_re01\smart_bump_re01.axf
