@@ -1,2 +1,2 @@
-# Smart-Bumper
+# Smart-Bump
 IoT course Project
