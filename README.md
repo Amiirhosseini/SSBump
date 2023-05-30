@@ -1,2 +1,2 @@
-# Smart-Bump
+# SSBump
 IoT course Project
