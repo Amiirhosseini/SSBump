@@ -46,15 +46,16 @@ void setup()
  
 void loop()
  {
-
+//read sensor data
 int Sensordata1 = digitalRead (LDRSensor1);
 int Sensordata2 = digitalRead (LDRSensor2);
-
+//set flag if sensor 1 is activated
 if(!(Sensordata1 == 1 && Sensordata2 == 1)){
 if(Sensordata1 == 1  && waitingfor2nd == 0){
 waitingfor2nd = 1;
 t1 = millis();
 }}
+//waiting for sensor 2
 if (Sensordata2 == 1 && waitingfor2nd == 1){
 t2 = millis();
 //Serial.print("Speed: "); /
@@ -63,6 +64,7 @@ t2 = millis();
 //send to server  dist*3.6/double((t2-t1))
 waitingfor2nd = 0;
 //double a=43.4;
+ //calculate velocity
   double a=dist*36/double((t2-t1));
   int integerNumber = static_cast<int>(a);
 
@@ -71,6 +73,7 @@ waitingfor2nd = 0;
 
 
 }
+ //recieve location from emergency cars
 if (LoRa.parsePacket()) {
   int i =0;
     while (LoRa.available()) {
@@ -82,6 +85,7 @@ if (LoRa.parsePacket()) {
     }
     //Serial.write(lor);
     //Serial.println();
+ //calculate distance between bump and emegency car
     if(lor[0]=='1' &&  lor[1]=='7')/*distance << tresh*/{
   //bumper down
 digitalWrite(dirPin,HIGH); // Enables the motor to move in a particular direction
