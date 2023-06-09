@@ -1,2 +1,1 @@
 # SSBump
-IoT course Project
